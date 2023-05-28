@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 537093054}
   - component: {fileID: 537093053}
   - component: {fileID: 537093052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: e
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -473,8 +473,8 @@ GameObject:
   - component: {fileID: 990893706}
   - component: {fileID: 990893705}
   - component: {fileID: 990893704}
-  - component: {fileID: 990893703}
   - component: {fileID: 990893707}
+  - component: {fileID: 990893708}
   m_Layer: 0
   m_Name: CarPlayer
   m_TagString: Untagged
@@ -482,29 +482,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &990893703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990893702}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271c85bf8f28ae5409d1a8f7bd33df61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motorForce: 0
-  breakForce: 0
-  maxSteerAngle: 0
-  frontLeftWheelCollider: {fileID: 0}
-  frontRightWheelCollider: {fileID: 0}
-  rearLefttWheelCollider: {fileID: 0}
-  rearRighttWheelCollider: {fileID: 0}
-  frontLeftWheelTransform: {fileID: 0}
-  fronRightWheelTransform: {fileID: 0}
-  rearLeftWheelTransform: {fileID: 0}
-  rearRightWheelTransform: {fileID: 0}
 --- !u!65 &990893704
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -526,7 +503,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990893702}
   serializedVersion: 2
-  m_Mass: 1200
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -558,15 +535,42 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990893702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce0badc8201902c4cbbb4124825aded2, type: 3}
+  m_Script: {fileID: 11500000, guid: 271c85bf8f28ae5409d1a8f7bd33df61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 5
-  isGrounded: 0
-  maxJumpCount: 2
-  jumpsRemaining: 0
+  motorForce: 0
+  breakForce: 0
+  maxSteerAngle: 0
+  frontLeftWheelCollider: {fileID: 0}
+  frontRightWheelCollider: {fileID: 0}
+  rearLefttWheelCollider: {fileID: 0}
+  rearRighttWheelCollider: {fileID: 0}
+  frontLeftWheelTransform: {fileID: 0}
+  fronRightWheelTransform: {fileID: 0}
+  rearLeftWheelTransform: {fileID: 0}
+  rearRightWheelTransform: {fileID: 0}
+--- !u!114 &990893708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990893702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208e7e6eb35dbf84896b639297f4ed2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
+  jumpCooldown: 0.1
+  airMultiplier: 1
+  jumpKey: 106
+  playerHeight: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1546980574
 GameObject:
   m_ObjectHideFlags: 0
