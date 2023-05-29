@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class AirJumpController : MonoBehaviour
 {
-
+    //Salto
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readtToJump;
-
-    //public int maxJumpCount = 2;
-    //public int jumpRestantes = 0;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.J;
@@ -23,6 +20,20 @@ public class AirJumpController : MonoBehaviour
 
     Rigidbody rb;
 
+    //Doble Salto
+    //public int maxJumpCount = 2;
+    //public int jumpRestantes = 0;
+
+
+    //Control Aereo
+    //public KeyCode rollRightInput = KeyCode.E;
+    //public KeyCode rollLeftInput = KeyCode.Q;
+
+    //public float rollRotationSpeed;
+    //public float yawpitchRotationSpeed;
+
+    //public float verticalInput;
+    //public float horizontalInput;
 
     private void FixedUpdate()
     {
@@ -50,6 +61,9 @@ public class AirJumpController : MonoBehaviour
             readtToJump = false;
 
             Jump();
+
+            //AerialCarController();
+
             //jumpRestantes -= 1;
 
             Invoke(nameof(ResetJump), jumpCooldown);
@@ -68,5 +82,38 @@ public class AirJumpController : MonoBehaviour
         readtToJump = true;
         //jumpRestantes = maxJumpCount;
     }
+
+    //private void AerialCarController()
+    //{
+    //    if (rollRightInput)
+    //    {
+    //        this.transform.Rotate(Vector3.back, rollRotationSpeed * Time.deltaTime);
+    //    }
+    //    else if (rollLeftInput)
+    //    {
+    //        this.transform.Rotate(Vector3.forward, rollRotationSpeed * Time.deltaTime);
+    //    }
+
+    //    //Handle Pitch/Yawn on WASD
+
+    //    if (verticalInput > 0)
+    //    {
+    //        this.transform.Rotate(Vector3.right, yawpitchRotationSpeed * Time.deltaTime);
+    //    }
+    //    else if (verticalInput < 0)
+    //    {
+    //        this.transform.Rotate(Vector3.left, yawpitchRotationSpeed * Time.deltaTime);
+    //    }
+
+    //    if (horizontalInput < 0)
+    //    {
+    //        this.transform.Rotate(Vector3.up, yawpitchRotationSpeed * Time.deltaTime);
+    //    }
+    //    else if (horizontalInput > 0)
+    //    {
+    //        this.transform.Rotate(Vector3.down, yawpitchRotationSpeed * Time.deltaTime);
+    //    }
+
+    //}
 
 }
